@@ -1,12 +1,22 @@
 {
   "name": "guestbook",
+  "main": "index.js",
   "private": true,
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remedyhealth/nextjs-challenge-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/remedyhealth/nextjs-challenge-boilerplate/issues"
+  },
+  "homepage": "https://github.com/remedyhealth/nextjs-challenge-boilerplate#readme",
   "dependencies": {
     "next": "12.0.4",
     "react": "17.0.2",
