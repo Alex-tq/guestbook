@@ -1,5 +1,5 @@
 import React from 'react'
-import GuestList from '../../components/GuestList'
+import GuestList from '../components/GuestList'
 
 export default function Feed({guests}) {
     
