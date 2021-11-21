@@ -5,6 +5,7 @@ export default function Feed({guests}) {
     
     return (
         <div className="container">
+            {guests.length? <h1>Guest List</h1>: <h1>The guest list is empty</h1>}
             <GuestList guests={guests}/>
         </div>
     )

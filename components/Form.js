@@ -39,7 +39,7 @@ export default function Form(props) {
 
     return (
         <form className={formStyles.form} onSubmit={handleSubmit}>
-            <h3>Add your name and message</h3>
+            <h3>Add guest name and message</h3>
             <div className="field">
                
                 <input 

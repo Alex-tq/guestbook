@@ -13,10 +13,11 @@ body {
 }
 .container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 8vh;
-  min-height: 92vh;
+  min-height: 100vh;
   background-color: rgb(52, 53, 53);
 }
 
@@ -25,4 +26,8 @@ body {
 }
 .error{
   color: red;
+}
+h1{
+  color: blanchedalmond;
+  text-align: center;
 }
