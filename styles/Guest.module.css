@@ -5,5 +5,7 @@
     padding: 5px;
     margin: 5px;
     text-align: center;
-    
+    width: 600px;
+    max-width: 95vw;
+    overflow-wrap: break-word;
 }
