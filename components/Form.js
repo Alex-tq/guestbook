@@ -3,21 +3,49 @@ import formStyles from '../styles/Form.module.css'
 
 
 export default function Form(props) {
-    const [name, setName] = useState('')
-    const [message, setMessage] = useState('')
+    const [formData, setFormData] = useState({name: '', message: ""})
+    
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData)
+        setFormData({name: '', message: ''})
+    }
+    const handleChange = (e)=>{
+        const {name, value} = e.target
+        setFormData(prev =>{
+            return {
+                ...prev,
+                [name]:value
+            }
+        })
+    }
 
     return (
-        <form class={formStyles.form}>
+        <form className={formStyles.form} onSubmit={handleSubmit}>
+            <h3>Add your name and message</h3>
             <div className="field">
                
-                <input type="text" name="name" placeholder="Name"/>
+                <input 
+                    type="text" 
+                    value={formData.name} 
+                    name="name" 
+                    placeholder="Name"
+                    onChange={handleChange}
+                />
             </div>
             <div className="field">
                 
-                <textarea type="text" name="message" placeholder="message"/>
+                <textarea 
+                    type="text" 
+                    value={formData.message} 
+                    name="message" 
+                    placeholder="message"
+                    onChange={handleChange}
+                />
             </div>
             
-            <button class="button" type="submit">Submit</button>
+            <button className="button" type="submit">Submit</button>
         </form>
     )
 }

@@ -6,6 +6,10 @@
   background-color: rgb(0, 0, 0);
   padding: 10px;
 }
+.form h3{
+  color: white;
+  text-align: center;
+}
 .form input, .form textarea {
   padding: 15px;
   border: 1px solid #ccc;
