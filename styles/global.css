@@ -18,3 +18,10 @@ body {
   min-height: 92vh;
   background-color: rgb(52, 53, 53);
 }
+
+.success{
+  color: rgb(101, 255, 101);
+}
+.error{
+  color: red;
+}

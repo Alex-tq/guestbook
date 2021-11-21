@@ -4,13 +4,13 @@ import formStyles from '../styles/Form.module.css'
 
 export default function Form(props) {
     const [formData, setFormData] = useState({name: '', message: ""})
+    const [submitMessage, setSubmitMessage] = useState({message: '', type: ''})
     
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const [name, value] = e.target
         if(formData.name && formData.message){
-            //console.log(formData)
+
             const res = await fetch("http://localhost:3000/api/guestbook",
             {
                 method: "POST",
@@ -19,11 +19,10 @@ export default function Form(props) {
                     'Content-Type': 'application/json'
                 }
             })
-            const data = await res.json()
-            console.log(data)
+            setSubmitMessage({message:'Guest Submitted', type: "success"})
         }
         else{
-            console.log("missing fields")
+            setSubmitMessage({message:'Missing Fields', type: "error"})
         }
         setFormData({name: '', message: ''})
         
@@ -61,7 +60,7 @@ export default function Form(props) {
                     onChange={handleChange}
                 />
             </div>
-            
+            {submitMessage.message? <h2 className={`${submitMessage.type}`}>{submitMessage.message}</h2>:''}
             <button className="button" type="submit">Submit</button>
         </form>
     )

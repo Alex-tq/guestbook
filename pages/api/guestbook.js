@@ -1,4 +1,4 @@
-import guests from "../../data/guests"
+import {guests} from "../../data/guests"
 
 export default function handler (req, res){
     if(req.method === 'GET'){
@@ -11,8 +11,6 @@ export default function handler (req, res){
             id: Date.now()
         }
         guests.push(newGuest)
-
-        console.log(guests)
         res.status(201).json(newGuest)
     }
 }
