@@ -6,10 +6,27 @@ export default function Form(props) {
     const [formData, setFormData] = useState({name: '', message: ""})
     
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(formData)
+        const [name, value] = e.target
+        if(formData.name && formData.message){
+            //console.log(formData)
+            const res = await fetch("http://localhost:3000/api/guestbook",
+            {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await res.json()
+            console.log(data)
+        }
+        else{
+            console.log("missing fields")
+        }
         setFormData({name: '', message: ''})
+        
     }
     const handleChange = (e)=>{
         const {name, value} = e.target
