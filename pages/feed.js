@@ -1,5 +1,6 @@
 import React from 'react'
 import GuestList from '../components/GuestList'
+import { server } from '../config'
 
 export default function Feed({guests}) {
     
@@ -12,7 +13,7 @@ export default function Feed({guests}) {
 }
 
 export const getServerSideProps = async () =>{
-    const res = await fetch("http://localhost:3000/api/guestbook")
+    const res = await fetch(`${server}/api/guestbook`)
     
     const guests = await res.json()
 

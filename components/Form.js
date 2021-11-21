@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import formStyles from '../styles/Form.module.css'
+import { server } from '../config'
 
 
 export default function Form(props) {
@@ -11,7 +12,7 @@ export default function Form(props) {
         e.preventDefault()
         if(formData.name && formData.message){
 
-            const res = await fetch("http://localhost:3000/api/guestbook",
+            const res = await fetch(`${server}/api/guestbook`,
             {
                 method: "POST",
                 body: JSON.stringify(formData),
