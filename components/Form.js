@@ -10,8 +10,9 @@ export default function Form(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log('in submit')
         if(formData.name && formData.message){
-
+            console.log('About to post')
             const res = await fetch(`${server}/api/guestbook`,
             {
                 method: "POST",
@@ -20,6 +21,7 @@ export default function Form(props) {
                     'Content-Type': 'application/json'
                 }
             })
+            console.log('just posted')
             setSubmitMessage({message:'Guest Submitted', type: "success"})
         }
         else{
