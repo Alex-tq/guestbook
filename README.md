@@ -19,5 +19,3 @@ Feel free to add the following
 3. Code linting
 
 # Changes
-
-1. changed the dev script from "NODE_ENV=development npm start" to "SET NODE_ENV=development & npm start" to be able to run it on windows.
