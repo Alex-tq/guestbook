@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  className="container"
+>
+  <h1>
+    test
+  </h1>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <h3>
+      Add guest name and message
+    </h3>
+    <div
+      className="field"
+    >
+      <input
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <textarea
+        name="message"
+        onChange={[Function]}
+        placeholder="message"
+        type="text"
+        value=""
+      />
+    </div>
+    
+    <button
+      className="button"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
