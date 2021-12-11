@@ -14,6 +14,13 @@ export default function handler (req, res){
             guests.push(newGuest)
             res.status(201).json(newGuest)
         }
+        else if(req.method === "DELETE"){
+        
+            const id = req.query.id
+            const index = guests.findIndex(obj => obj.id == id)
+            const removed = guests.splice(index, 1)
+            res.status(200).json(removed)
+        }
 
     }catch(e){
         console.error(e)
