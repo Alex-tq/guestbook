@@ -1,11 +1,23 @@
+$text-color: white;
+$button-color: rgb(148, 28, 28);
 .guestCard{
     background-color: rgb(0, 0, 0);
     border-radius: 35px;
-    color: rgb(255, 255, 255);
+    color: $text-color;
     padding: 5px;
     margin: 5px;
     text-align: center;
     width: 600px;
     max-width: 95vw;
     overflow-wrap: break-word;
+    button{
+        background-color: $button-color;
+        color: $text-color;
+        padding: 0.3rem;
+        border-radius: 5px;
+        border-style: none;
+        &:hover{
+            background-color: lighten($button-color, $amount: 20);
+        }
+    }
 }
