@@ -1,5 +1,5 @@
 import React from 'react'
-import guestStyles from '../styles/Guest.module.css'
+import guestStyles from '../styles/Guest.module.scss'
 import { server } from '../config'
 import { useRouter } from 'next/router'
 

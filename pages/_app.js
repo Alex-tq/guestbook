@@ -1,4 +1,4 @@
-import '../styles/global.css'
+import '../styles/global.scss'
 import React from 'react'
 import Layout from '../components/Layout'
 
