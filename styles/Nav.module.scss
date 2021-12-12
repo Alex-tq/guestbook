@@ -7,19 +7,18 @@
     align-items: center;
     height: 8vh;
     color: blanchedalmond;
-}
-.nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav ul li a{
-    margin: 5px 15px;
-    color: inherit;
-    text-decoration: none;
-}
-.nav ul li:hover{
-    background-color: rgb(44, 45, 46);
+    & ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & a{
+        margin: 5px 15px;
+        color: inherit;
+        text-decoration: none;
+    }
+    & li:hover{
+        background-color: rgb(44, 45, 46);
+    }
 }
