@@ -4,9 +4,6 @@ exports[`renders homepage unchanged 1`] = `
 <div
   className="container"
 >
-  <h1>
-    test
-  </h1>
   <form
     className="form"
     onSubmit={[Function]}
@@ -31,7 +28,7 @@ exports[`renders homepage unchanged 1`] = `
       <textarea
         name="message"
         onChange={[Function]}
-        placeholder="message"
+        placeholder="Message"
         type="text"
         value=""
       />

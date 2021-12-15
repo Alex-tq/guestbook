@@ -57,7 +57,7 @@ export default function Form(props) {
                     type="text" 
                     value={formData.message} 
                     name="message" 
-                    placeholder="message"
+                    placeholder="Message"
                     onChange={handleChange}
                 />
             </div>
