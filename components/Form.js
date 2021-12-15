@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import formStyles from '../styles/Form.module.css'
+import formStyles from '../styles/Form.module.scss'
 import { server } from '../config'
 
 
