@@ -54,4 +54,32 @@ describe("Form", () => {
         expect(textarea.value).toBe('')
         
     });
+
+    it('Should display error message when name field is empty and button is clicked', async () => {
+        render(<Form />)
+
+        const textarea = screen.getByPlaceholderText('Message')
+        fireEvent.change(textarea, { target: {value: 'Hello'} })
+        const submitButton = screen.getByRole('button')
+        fireEvent.click(submitButton)
+        const errorMessage = screen.getByRole('heading', {
+            name: /Missing Fields/i,
+        })
+        
+        expect(errorMessage).toBeInTheDocument()
+    });
+
+    it('Should display error message when message field is empty and button is clicked', async () => {
+        render(<Form />)
+
+        const nameInput = screen.getByPlaceholderText('Name')
+        fireEvent.change(nameInput, { target: {value: 'John'} })
+        const submitButton = screen.getByRole('button')
+        fireEvent.click(submitButton)
+        const errorMessage = screen.getByRole('heading', {
+            name: /Missing Fields/i,
+        })
+        
+        expect(errorMessage).toBeInTheDocument()
+    });
 })
