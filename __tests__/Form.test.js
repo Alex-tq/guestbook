@@ -38,4 +38,20 @@ describe("Form", () => {
         fireEvent.change(textarea, { target: {value: 'Hello'} })
         expect(textarea.value).toBe('Hello')
     });
+
+    it('should clear name input and text area when submit is clicked', async () => {
+        render(<Form />)
+
+        const nameInput = screen.getByPlaceholderText('Name')
+        fireEvent.change(nameInput, { target: {value: 'John'} })
+        const textarea = screen.getByPlaceholderText('Message')
+        fireEvent.change(textarea, { target: {value: 'Hello'} })
+        const submitButton = screen.getByRole('button')
+
+        fireEvent.click(submitButton)
+        
+        expect(nameInput.value).toBe('')
+        expect(textarea.value).toBe('')
+        
+    });
 })

@@ -11,16 +11,20 @@ export default function Form(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         if(formData.name && formData.message){
+            try{
+                const res = await fetch(`${server}/api/guestbook`,
+                {
+                    method: "POST",
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                setSubmitMessage({message:'Guest Submitted', type: "success"})
 
-            const res = await fetch(`${server}/api/guestbook`,
-            {
-                method: "POST",
-                body: JSON.stringify(formData),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            setSubmitMessage({message:'Guest Submitted', type: "success"})
+            } catch (err){
+                console.log(err)
+            }
         }
         else{
             setSubmitMessage({message:'Missing Fields', type: "error"})
