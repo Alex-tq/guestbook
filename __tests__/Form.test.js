@@ -82,4 +82,20 @@ describe("Form", () => {
         
         expect(errorMessage).toBeInTheDocument()
     });
+    
+    it('Should display success message when text fields are filled and button is clicked', async () => {
+        render(<Form />)
+
+        const nameInput = screen.getByPlaceholderText('Name')
+        fireEvent.change(nameInput, { target: {value: 'John'} })
+        const textarea = screen.getByPlaceholderText('Message')
+        fireEvent.change(textarea, { target: {value: 'Hello'} })
+        const submitButton = screen.getByRole('button')
+        fireEvent.click(submitButton)
+        const successMessage = await screen.findByRole('heading', {
+            name: 'Guest Submitted',
+        })
+        
+        expect(successMessage).toBeInTheDocument()
+    });
 })

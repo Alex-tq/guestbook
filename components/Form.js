@@ -11,6 +11,7 @@ export default function Form(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         if(formData.name && formData.message){
+            setSubmitMessage({message:'Guest Submitted', type: "success"})
             try{
                 const res = await fetch(`${server}/api/guestbook`,
                 {
@@ -20,7 +21,6 @@ export default function Form(props) {
                         'Content-Type': 'application/json'
                     }
                 })
-                setSubmitMessage({message:'Guest Submitted', type: "success"})
 
             } catch (err){
                 console.log(err)
