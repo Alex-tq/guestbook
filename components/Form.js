@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import formStyles from '../styles/Form.module.scss'
-import { server } from '../config'
+import { server as serverUrl } from '../config'
 
 
 export default function Form(props) {
@@ -13,7 +13,7 @@ export default function Form(props) {
         if(formData.name && formData.message){
             setSubmitMessage({message:'Guest Submitted', type: "success"})
             try{
-                const res = await fetch(`${server}/api/guestbook`,
+                const res = await fetch(`${serverUrl}/api/guestbook`,
                 {
                     method: "POST",
                     body: JSON.stringify(formData),

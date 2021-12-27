@@ -4,7 +4,24 @@
 
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
+//import 'whatwg-fetch'
+import { rest } from 'msw'
+import { setupServer } from 'msw/node'
+import { server as serverUrl } from '../config'
 import Form from '../components/Form'
+
+const server = setupServer(
+    rest.post(`${serverUrl}/api/guestbook`, (req, res, ctx) => {
+        return res(
+            ctx.status(200),
+            ctx.json({name: 'Some Name', message: 'Some message'})
+        )
+    })
+)
+
+beforeAll(()=> server.listen())
+afterAll(()=> server.close())
+afterEach(()=> server.resetHandlers())
 
 test('The form renders correctly', ()=>{
     render(<Form />)
