@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-//import 'whatwg-fetch'
+import 'whatwg-fetch'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import { server as serverUrl } from '../config'

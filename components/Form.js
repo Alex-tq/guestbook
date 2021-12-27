@@ -10,13 +10,15 @@ export default function Form(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if(formData.name && formData.message){
+        const { name, message } = formData
+        setFormData({name: '', message: ''})
+        if(name && message){
             setSubmitMessage({message:'Guest Submitted', type: "success"})
             try{
                 const res = await fetch(`${serverUrl}/api/guestbook`,
                 {
                     method: "POST",
-                    body: JSON.stringify(formData),
+                    body: JSON.stringify({name: name, message: message}),
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -29,7 +31,6 @@ export default function Form(props) {
         else{
             setSubmitMessage({message:'Missing Fields', type: "error"})
         }
-        setFormData({name: '', message: ''})
         
     }
     const handleChange = (e)=>{
